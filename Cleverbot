@@ -1,0 +1,172 @@
+{
+    "name": "chatbot",
+    "permissions": "MANAGE_MESSAGES",
+    "restriction": "1",
+    "_id": "YSGJI",
+    "actions": [
+        {
+            "info": "0",
+            "infoIndex": "1",
+            "storage": "1",
+            "varName": "param",
+            "name": "Store Command Params"
+        },
+        {
+            "storage": "1",
+            "varName": "param",
+            "comparison": "1",
+            "value": "\"on\"",
+            "iftrue": "0",
+            "iftrueVal": "",
+            "iffalse": "2",
+            "iffalseVal": "18",
+            "name": "Check Variable"
+        },
+        {
+            "channel": "0",
+            "varName": "",
+            "message": "**Starting Chat Bots..**\nDo `/chatbot stop` to stop them.",.
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "server": "0",
+            "varName": "",
+            "dataName": "chatboton",
+            "defaultVal": "0",
+            "storage": "1",
+            "varName2": "chatboton",
+            "name": "Store Server Data"
+        },
+        {
+            "server": "0",
+            "varName": "",
+            "dataName": "chatboton",
+            "changeType": "0",
+            "value": "1",
+            "name": "Control Server Data"
+        },
+        {
+            "channel": "5",
+            "varName": "Donotusevariable",
+            "message": "Hey there ",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "WhichAPI": "0",
+            "inputVarType": "1",
+            "inputVarName": "Donotusevariable",
+            "APIuser": "",
+            "APIkey": "",
+            "storage": "1",
+            "varName2": "response1",
+            "name": "Cleverbot"
+        },
+        {
+            "call": "11",
+            "name": "Jump to Action"
+        },
+        {
+            "server": "0",
+            "varName": "",
+            "dataName": "chatboton",
+            "comparison": "1",
+            "value": "1",
+            "iftrue": "0",
+            "iftrueVal": "",
+            "iffalse": "1",
+            "iffalseVal": "",
+            "name": "Check Server Data"
+        },
+        {
+            "WhichAPI": "0",
+            "inputVarType": "1",
+            "inputVarName": "response2",
+            "APIuser": "",
+            "APIkey": "",
+            "storage": "1",
+            "varName2": "response1",
+            "name": "Cleverbot"
+        },
+        {
+            "time": "10",
+            "measurement": "1",
+            "name": "Wait"
+        },
+        {
+            "channel": "0",
+            "varName": "",
+            "message": "Ted: ${tempVars(\"response1\")}",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "WhichAPI": "0",
+            "inputVarType": "1",
+            "inputVarName": "response1",
+            "APIuser": "",
+            "APIkey": "",
+            "storage": "1",
+            "varName2": "response2",
+            "name": "Cleverbot"
+        },
+        {
+            "time": "10",
+            "measurement": "1",
+            "name": "Wait"
+        },
+        {
+            "channel": "0",
+            "varName": "",
+            "message": "Bob: ${tempVars(\"response2\")}",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "call": "9",
+            "name": "Jump to Action"
+        },
+        {
+            "comment": "Want more bots talking? Just repeat actions #10,11,12 and make sure the new bot is above #16",
+            "color": "#000000",
+            "name": "Comment"
+        },
+        {
+            "storage": "1",
+            "varName": "param",
+            "comparison": "1",
+            "value": "\"off\"",
+            "iftrue": "0",
+            "iftrueVal": "",
+            "iffalse": "1",
+            "iffalseVal": "",
+            "name": "Check Variable"
+        },
+        {
+            "server": "0",
+            "varName": "",
+            "dataName": "chatboton",
+            "changeType": "0",
+            "value": "0",
+            "name": "Control Server Data"
+        },
+        {
+            "channel": "0",
+            "varName": "",
+            "message": "Done, chat bots may still talk for one time loop but should shutdown.",
+            "storage": "0",
+            "varName2": "",
+            "name": "Send Message"
+        },
+        {
+            "comment": "Command created by RileyWolfe#3304, Cleverbot intergration by  EGGSY & Lasse. This wouldn't have been possible if they didn't make a mod!",
+            "color": "#000000",
+            "name": "Comment"
+        }
+    ]
+}
