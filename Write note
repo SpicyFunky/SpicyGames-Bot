@@ -1,0 +1,46 @@
+{
+  "name": "note",
+  "permissions": "MANAGE_GUILD",
+  "restriction": "1",
+  "_id": "KWXor",
+  "actions": [
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "file-name",
+      "name": "Store Command Params"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "text",
+      "name": "Store Command Params"
+    },
+    {
+      "input": "${tempVars(\"text\")}",
+      "format": ".txt",
+      "filename": "${tempVars(\"file-name\")}",
+      "filepath": "./notes/",
+      "filetask": "0",
+      "name": "File Control"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "*Written your Note to `${tempVars(\"file-name\")}.txt`*",
+      "storage": "0",
+      "varName2": "",
+      "name": "Send Message"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "file": "/notes/${tempVars(\"file-name\")}.txt",
+      "message": "Here is the File:",
+      "name": "Send File"
+    }
+  ],
+  "comType": "0"
+}
