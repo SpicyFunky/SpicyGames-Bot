@@ -1,0 +1,134 @@
+{
+  "name": "FactionRecruits",
+  "permissions": "NONE",
+  "restriction": "1",
+  "actions": [
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "13",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "Faction-Recruits-ID-Find",
+      "name": "Store Command Params"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"Faction-Recruits-ID-Find\")}-Faction",
+      "defaultVal": "\"Not_Found\"",
+      "storage": "1",
+      "varName2": "Faction-Recruits-Faction-Name",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"Faction-Recruits-ID-Find\")}-FactionRequestsCount",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "Faction-Recruits-Count-Requests",
+      "name": "Store Server Data"
+    },
+    {
+      "list": "8",
+      "varName": "${tempVars(\"Faction-Recruits-ID-Find\")}-FactionRequestsList",
+      "start": "",
+      "middle": "",
+      "end": "\\n",
+      "storage": "1",
+      "varName2": "Faction-Requests-List-Applying",
+      "name": "Convert List to Text"
+    },
+    {
+      "title": "Faction",
+      "author": "",
+      "color": "",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "Faction-Recruits-MSG",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Faction-Recruits-MSG",
+      "fieldName": "Faction ID",
+      "message": "${tempVars(\"Faction-Recruits-ID-Find\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Faction-Recruits-MSG",
+      "fieldName": "Request Count",
+      "message": "${tempVars(\"Faction-Recruits-Count-Requests\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Faction-Recruits-MSG",
+      "fieldName": "Requests",
+      "message": "${tempVars(\"Faction-Requests-List-Applying\")}",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Faction-Recruits-MSG",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Error",
+      "author": "",
+      "color": "FF0000",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "Faction-Recruits-Error-MSG",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Faction-Recruits-Error-MSG",
+      "message": "You must specify a Faction ID",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Faction-Recruits-Error-MSG",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "_id": "rSrjt"
+}
