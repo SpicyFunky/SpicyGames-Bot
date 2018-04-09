@@ -1,0 +1,139 @@
+{
+  "name": "ResetFactionRecruits",
+  "permissions": "ADMINISTRATOR",
+  "restriction": "1",
+  "actions": [
+    {
+      "storage": "0",
+      "varName": "",
+      "name": "Delete Message"
+    },
+    {
+      "condition": "0",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "0",
+      "iftrueVal": "",
+      "iffalse": "2",
+      "iffalseVal": "14",
+      "name": "Check Parameters"
+    },
+    {
+      "info": "0",
+      "infoIndex": "1",
+      "storage": "1",
+      "varName": "Reset-Faction-Requests-ID-Find",
+      "name": "Store Command Params"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"Reset-Faction-Requests-ID-Find\")}-Faction",
+      "defaultVal": "\"Not_Found\"",
+      "storage": "1",
+      "varName2": "Reset-Faction-Recruits-Faction-Name",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"Reset-Faction-Requests-ID-Find\")}-FactionRequestsCount",
+      "defaultVal": "0",
+      "storage": "1",
+      "varName2": "Reset-Faction-Requests-Count-Total",
+      "name": "Store Server Data"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "dataName": "${tempVars(\"Reset-Faction-Requests-Count-Total\")}-FactionRequestsCount",
+      "changeType": "0",
+      "value": "0",
+      "name": "Control Server Data"
+    },
+    {
+      "storage": "2",
+      "varName": "${tempVars(\"Reset-Faction-Requests-ID-Find\")}-FactionRequestsList",
+      "changeType": "0",
+      "value": "\"\"",
+      "name": "Control Variable"
+    },
+    {
+      "title": "Faction",
+      "author": "",
+      "color": "",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "Reset-Faction-Requests-MSG",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Reset-Faction-Requests-MSG",
+      "fieldName": "Faction ID",
+      "message": "${tempVars(\"Reset-Faction-Requests-ID-Find\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Reset-Faction-Requests-MSG",
+      "fieldName": "Faction Name",
+      "message": "${tempVars(\"Reset-Faction-Recruits-Faction-Name\")}",
+      "inline": "0",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Reset-Faction-Requests-MSG",
+      "fieldName": "Reset",
+      "message": "**Requested Members:**\nData has been successfully reset",
+      "inline": "1",
+      "name": "Add Embed Field"
+    },
+    {
+      "storage": "1",
+      "varName": "Reset-Faction-Requests-MSG",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "title": "Error",
+      "author": "",
+      "color": "FF0000",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "Reset-Faction-No-ID-Error-MSG",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "Reset-Faction-No-ID-Error-MSG",
+      "message": "You must specify a Faction ID",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "Reset-Faction-No-ID-Error-MSG",
+      "channel": "0",
+      "varName2": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    }
+  ],
+  "_id": "ZajPk"
+}
